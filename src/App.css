@@ -138,17 +138,75 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.film-list li h2,
-.film-list li h3 {
-  margin: 0 0 0.5rem;
+.film-list li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.film-list li ul {
-  list-style: none;
+.film-list li a:hover {
+  text-decoration: underline;
+}
+
+.film-details h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.film-details p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.film-details h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.film-details ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
-.film-list li ul li {
-  margin: 0;
+.film-details ul li {
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #333;
+}
+
+.error-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-container h1 {
+  font-size: 6rem;
+  color: #333;
+}
+
+.error-container p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+  background-color: #555;
+  color: white;
 }

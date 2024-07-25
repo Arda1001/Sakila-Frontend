@@ -10,9 +10,9 @@ const FilmList: React.FC = () => {
     if (error) return <p>Error loading films: {error.message}</p>;
 
     return (
-        <div>
+        <div className="container">
             <h1>Films</h1>
-            <ul>
+            <ul className="film-list">
                 {films.map((film: Film) => (
                     <li key={film.id}>
                         <Link to={`/films/${film.id}`}>{film.title}</Link>

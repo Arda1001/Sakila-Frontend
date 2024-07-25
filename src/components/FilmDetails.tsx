@@ -11,20 +11,20 @@ const FilmDetails: React.FC = () => {
     if (!film) return <p>Film not found</p>;
 
     return (
-        <div className="container">
+        <div className="container film-details">
             <h1>{film.title}</h1>
-            <p><strong>Release Year:</strong> {film.releaseYear}</p>
-            <p><strong>Description:</strong> {film.description}</p>
-            <p><strong>Rental Duration:</strong> {film.rentalDuration} days</p>
-            <p><strong>Rental Rate:</strong> ${film.rentalRate}</p>
-            <p><strong>Length:</strong> {film.length} minutes</p>
-            <p><strong>Replacement Cost:</strong> ${film.replacementCost}</p>
-            <p><strong>Rating:</strong> {film.rating}</p>
-            <p><strong>Special Features:</strong> {film.specialFeatures.join(', ')}</p>
-            <p><strong>Language:</strong> {film.language.name}</p>
-            {film.originalLanguage && <p><strong>Original Language:</strong> {film.originalLanguage.name}</p>}
+            <p>{film.description}</p>
+            <p>Release Year: {film.releaseYear}</p>
+            <p>Rental Duration: {film.rentalDuration} days</p>
+            <p>Rental Rate: ${film.rentalRate}</p>
+            <p>Length: {film.length} minutes</p>
+            <p>Replacement Cost: ${film.replacementCost}</p>
+            <p>Rating: {film.rating}</p>
+            <p>Special Features: {film.specialFeatures.join(', ')}</p>
+            <p>Language: {film.language.id ? film.language.name : 'N/A'}</p>
+            <p>Original Language: {film.originalLanguage ? film.originalLanguage.name : 'N/A'}</p>
             <h2>Cast</h2>
-            <ul>
+            <ul className="actor-list">
                 {film.cast.map((actor) => (
                     <li key={actor.id}>
                         {actor.firstName} {actor.lastName}
