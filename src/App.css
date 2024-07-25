@@ -9,6 +9,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
+  justify-content: center;
+
+
 }
 
 nav {
@@ -181,8 +184,12 @@ h1 {
 }
 
 .error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   text-align: center;
-  padding: 2rem;
 }
 
 .error-container h1 {

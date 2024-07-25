@@ -4,14 +4,13 @@ import ActorList from './components/ActorList';
 import ActorDetails from './components/ActorDetails';
 import LanguageList from './components/LanguageList';
 import Home from './components/Home';
-import './App.css';
 import FilmList from './components/FilmList';
 import FilmDetails from './components/FilmDetails';
 import ErrorPage from './components/errorPage';
 
 const App: React.FC = () => {
   return (
-    <div>
+    <body>
       <nav className="navbar">
         <ul className="nav-list">
           <li><Link to="/"><button className="nav-button">Home</button></Link></li>
@@ -32,7 +31,7 @@ const App: React.FC = () => {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
-    </div>
+    </body>
   );
 };
 
