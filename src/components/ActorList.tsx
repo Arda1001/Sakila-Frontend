@@ -9,9 +9,9 @@ const ActorList: React.FC = () => {
     if (error) return <p>Error loading actors: {error.message}</p>;
 
     return (
-        <div>
+        <div className="container">
             <h1>Actors</h1>
-            <ul>
+            <ul className="actor-list">
                 {actors.map((actor) => (
                     <li key={actor.id}>
                         <Link to={`/actors/${actor.id}`}>{actor.firstName} {actor.lastName}</Link>
