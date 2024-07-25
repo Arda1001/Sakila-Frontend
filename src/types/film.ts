@@ -1,12 +1,13 @@
 import { Actor } from "./actor";
+import { Language } from './language';
 
 export interface Film {
     id: number;
     title: string;
     description: string;
     releaseYear: number;
-    languageId: number;
-    originalLanguageId: number | null;
+    language: Language;
+    originalLanguage: Language | null;
     rentalDuration: number;
     rentalRate: number;
     length: number;

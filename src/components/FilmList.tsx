@@ -1,27 +1,21 @@
-// src/components/FilmList.tsx
-import React from 'react';
+import { Link } from 'react-router-dom';
 import useFilms from '../hooks/useFilms';
+import React from 'react';
 import { Film } from '../types/film';
 
 const FilmList: React.FC = () => {
     const { films, loading, error } = useFilms();
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div>Loading...</div>;
     if (error) return <p>Error loading films: {error.message}</p>;
 
     return (
         <div>
             <h1>Films</h1>
-            <ul className="film-list">
+            <ul>
                 {films.map((film: Film) => (
                     <li key={film.id}>
-                        <h2>{film.title} ({film.releaseYear})</h2>
-                        <h3>Cast:</h3>
-                        <ul>
-                            {film.cast.map(actor => (
-                                <li key={actor.id}>{actor.firstName} {actor.lastName}</li>
-                            ))}
-                        </ul>
+                        <Link to={`/films/${film.id}`}>{film.title}</Link>
                     </li>
                 ))}
             </ul>
