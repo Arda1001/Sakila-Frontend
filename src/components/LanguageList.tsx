@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useLanguages from '../hooks/useLanguages';
+import { Language } from '../types/language';
 
 const LanguageList: React.FC = () => {
     const { languages, loading, error } = useLanguages();
@@ -9,13 +9,11 @@ const LanguageList: React.FC = () => {
     if (error) return <p>Error loading languages: {error.message}</p>;
 
     return (
-        <div className="container">
+        <div>
             <h1>Languages</h1>
             <ul className="language-list">
-                {languages.map((language) => (
-                    <li key={language.id}>
-                        <Link to={`/languages/${language.id}`}>{language.name}</Link>
-                    </li>
+                {languages.map((language: Language) => (
+                    <li key={language.id}>{language.name}</li>
                 ))}
             </ul>
         </div>
