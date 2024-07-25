@@ -25,12 +25,12 @@ export const fetchFilm = async (id: number) => {
     return response.data;
 };
 
-export const fetchLanguages = async () => {
+export const fetchLanguages = async (): Promise<Language[]> => {
     const response = await api.get('/languages');
     return response.data;
 };
 
-export const fetchLanguage = async (id: number) => {
+export const fetchLanguage = async (id: number): Promise<Language> => {
     const response = await api.get(`/languages/${id}`);
     return response.data;
 };

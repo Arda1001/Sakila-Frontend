@@ -1,6 +1,25 @@
+/* General reset for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
 nav {
   background-color: #333;
   padding: 1rem;
+  position: fixed;
+  /* Fix the navbar at the top */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Ensure it is on top of other elements */
 }
 
 nav ul {
@@ -8,6 +27,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center;
 }
 
 nav ul li {
@@ -17,10 +37,15 @@ nav ul li {
 nav ul li a {
   color: white;
   text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: #555;
+  text-decoration: none;
 }
 
 h1 {
@@ -28,7 +53,7 @@ h1 {
 }
 
 .container {
-  padding: 2rem;
+  padding: 5rem 2rem 2rem;
 }
 
 .actor-list {
@@ -52,4 +77,50 @@ h1 {
 
 .actor-list li a:hover {
   text-decoration: underline;
+}
+
+.language-list {
+  list-style: none;
+  padding: 0;
+}
+
+.language-list li {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px black;
+}
+
+.language-list li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.language-list li a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #555;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 5rem);
+  /* Full height minus navbar height */
+  text-align: center;
 }
