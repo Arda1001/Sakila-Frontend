@@ -2,6 +2,21 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFilm from '../hooks/useFilm';
 
+
+const formatSpecialFeature = (feature: string) => {
+    return feature
+        .toLowerCase()
+        .split('_')
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+};
+
+const formatRating = (rating: string) => {
+    return rating.replace('_', '-');
+
+};
+
+
 const FilmDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const { film, loading, error } = useFilm(Number(id));
@@ -19,8 +34,8 @@ const FilmDetails: React.FC = () => {
             <p>Rental Rate: ${film.rentalRate}</p>
             <p>Length: {film.length} minutes</p>
             <p>Replacement Cost: ${film.replacementCost}</p>
-            <p>Rating: {film.rating}</p>
-            <p>Special Features: {film.specialFeatures.join(', ')}</p>
+            <p>Rating: {formatRating(film.rating)}</p>
+            <p>Special Features: {film.specialFeatures.map(formatSpecialFeature).join(', ')}</p>
             <p>Language: {film.language.id ? film.language.name : 'N/A'}</p>
             <p>Original Language: {film.originalLanguage ? film.originalLanguage.name : 'N/A'}</p>
             <h2>Cast</h2>
