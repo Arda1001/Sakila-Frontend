@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { Actor } from '../types/actor';
+import { Language } from '../types/language';
+import { Film } from '../types/film';
 
 const api = axios.create({
     baseURL: 'http://localhost:8080', // URL of API
@@ -15,12 +17,12 @@ export const fetchActor = async (id: number): Promise<Actor> => {
     return response.data;
 };
 
-export const fetchFilms = async () => {
+export const fetchFilms = async (): Promise<Film[]> => {
     const response = await api.get('/films');
     return response.data;
 };
 
-export const fetchFilm = async (id: number) => {
+export const fetchFilm = async (id: number): Promise<Film> => {
     const response = await api.get(`/films/${id}`);
     return response.data;
 };

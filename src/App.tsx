@@ -5,6 +5,7 @@ import ActorDetails from './components/ActorDetails';
 import LanguageList from './components/LanguageList';
 import Home from './components/Home';
 import './App.css';
+import FilmList from './components/FilmList';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <li><Link to="/"><button className="nav-button">Home</button></Link></li>
           <li><Link to="/actors"><button className="nav-button">Actors</button></Link></li>
           <li><Link to="/languages"><button className="nav-button">Languages</button></Link></li>
+          <li><Link to="/films"><button className="nav-button">Films</button></Link></li>
         </ul>
       </nav>
       <div className="container">
@@ -22,6 +24,7 @@ const App: React.FC = () => {
           <Route path="/actors" element={<ActorList />} />
           <Route path="/actors/:id" element={<ActorDetails />} />
           <Route path="/languages" element={<LanguageList />} />
+          <Route path="/films" element={<FilmList />} />
           {/* Fallback route for unmatched paths */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
