@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useFilm from '../hooks/useFilm';
 
 
@@ -13,7 +13,6 @@ const formatSpecialFeature = (feature: string) => {
 
 const formatRating = (rating: string) => {
     return rating.replace('_', '-');
-
 };
 
 
@@ -42,7 +41,9 @@ const FilmDetails: React.FC = () => {
             <ul className="actor-list">
                 {film.cast.map((actor) => (
                     <li key={actor.id}>
-                        {actor.firstName} {actor.lastName}
+                        <Link to={`/actors/${actor.id}`}>
+                            {actor.firstName} {actor.lastName}
+                        </Link>
                     </li>
                 ))}
             </ul>

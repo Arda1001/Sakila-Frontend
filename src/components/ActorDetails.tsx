@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useActor from '../hooks/useActor';
 
 
@@ -18,7 +18,9 @@ const ActorDetails: React.FC = () => {
             <ul>
                 {actor.films.map((film) => (
                     <li key={film.id}>
-                        {film.title} ({film.releaseYear})
+                        <Link to={`/films/${film.id}`}>
+                            {film.title} ({film.releaseYear})
+                        </Link>
                     </li>
                 ))}
             </ul>
