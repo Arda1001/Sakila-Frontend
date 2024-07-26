@@ -15,7 +15,7 @@ const ActorDetails: React.FC = () => {
         <div className="container">
             <h1>{actor.firstName} {actor.lastName}</h1>
             <h2>Films</h2>
-            <ul>
+            <ul className="film-list">
                 {actor.films.map((film) => (
                     <li key={film.id}>
                         <Link to={`/films/${film.id}`}>

@@ -59,50 +59,38 @@ h1 {
   padding: 5rem 2rem 2rem;
 }
 
-.actor-list {
+.actor-list,
+.language-list,
+.film-list {
   list-style: none;
   padding: 0;
 }
 
-.actor-list li {
+.actor-list li,
+.language-list li,
+.film-list li {
   background-color: white;
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.actor-list li a {
+.actor-list li:hover,
+.language-list li:hover,
+.film-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.actor-list li a,
+.language-list li a,
+.film-list li a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
-}
-
-.actor-list li a:hover {
-  text-decoration: underline;
-}
-
-.language-list {
-  list-style: none;
-  padding: 0;
-}
-
-.language-list li {
-  background-color: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.language-list li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.language-list li a:hover {
-  text-decoration: underline;
+  display: block;
 }
 
 .nav-button {
@@ -126,29 +114,6 @@ h1 {
   height: calc(100vh - 5rem);
   /* Full height minus navbar height */
   text-align: center;
-}
-
-.film-list {
-  list-style: none;
-  padding: 0;
-}
-
-.film-list li {
-  background-color: white;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.film-list li a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.film-list li a:hover {
-  text-decoration: underline;
 }
 
 .film-details h1 {
