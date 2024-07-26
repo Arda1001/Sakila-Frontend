@@ -1,21 +1,10 @@
-import React, { useState, useMemo, useCallback } from 'react';
-import _ from 'lodash';
-import useActors from '../hooks/useActors';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
+import useActors from '../hooks/useActors';
 
 const ActorList: React.FC = () => {
     const { actors, loading, error } = useActors();
     const [searchTerm, setSearchTerm] = useState('');
-
-    const throttledSetSearchTerm = useCallback(
-        _.throttle((value) => setSearchTerm(value), 100),
-        []
-    );
-
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        throttledSetSearchTerm(e.target.value);
-    };
 
     const filteredActors = useMemo(() => {
         return actors.filter((actor) =>
@@ -24,22 +13,24 @@ const ActorList: React.FC = () => {
     }, [actors, searchTerm]);
 
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error loading film: {error.message}</p>;
+    if (error) return <p>Error loading actors: {error.message}</p>;
 
     return (
-        <div className="container">
+        <div>
             <h1>Actors</h1>
             <input
                 type="text"
-                placeholder="Search actors"
+                placeholder="Search actors..."
                 value={searchTerm}
-                onChange={handleSearchChange}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 className="search-input"
             />
             <ul className="actor-list">
                 {filteredActors.map((actor) => (
                     <li key={actor.id}>
-                        <Link to={`/actors/${actor.id}`}>{actor.firstName} {actor.lastName}</Link>
+                        <Link to={`/actors/${actor.id}`}>
+                            {actor.firstName} {actor.lastName}
+                        </Link>
                     </li>
                 ))}
             </ul>
@@ -48,3 +39,4 @@ const ActorList: React.FC = () => {
 };
 
 export default ActorList;
+
