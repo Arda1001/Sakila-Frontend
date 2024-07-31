@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import useFilms from '../hooks/useFilms';
 import { Film } from '../types/film';
+import SearchBar from './SearchBar';
 
 const FilmList: React.FC = () => {
     const { films, loading, error } = useFilms();
@@ -19,13 +20,10 @@ const FilmList: React.FC = () => {
     return (
         <div className="container">
             <h1>Films</h1>
-            <input
-                type="text"
-                placeholder="Search films"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-            />
+            <SearchBar onSearch={setSearchTerm} />
+            <Link to="/films/create">
+                <button className="create-film-button">Create Film</button>
+            </Link>
             <ul className="film-list">
                 {filteredFilms.map((film: Film) => (
                     <li key={film.id}>

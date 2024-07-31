@@ -1,4 +1,4 @@
-import { Actor } from "./actor";
+import { Actor } from './actor';
 import { Language } from './language';
 
 export interface Film {
@@ -14,5 +14,6 @@ export interface Film {
     replacementCost: number;
     rating: string;
     specialFeatures: string[];
+    castIds: number[];
     cast: Actor[];
 }

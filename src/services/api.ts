@@ -19,6 +19,11 @@ export const fetchActor = async (id: number): Promise<Actor> => {
     return response.data;
 };
 
+export const createActor = async (actor: { firstName: string; lastName: string }) => {
+    const response = await api.post('/actors', actor);
+    return response.data;
+};
+
 export const fetchFilms = async (): Promise<Film[]> => {
     const response = await api.get('/films');
     return response.data;
@@ -26,6 +31,11 @@ export const fetchFilms = async (): Promise<Film[]> => {
 
 export const fetchFilm = async (id: number): Promise<Film> => {
     const response = await api.get(`/films/${id}`);
+    return response.data;
+};
+
+export const createFilm = async (film: Film): Promise<Film> => {
+    const response = await api.post('/films', film);
     return response.data;
 };
 
@@ -39,3 +49,7 @@ export const fetchLanguage = async (id: number): Promise<Language> => {
     return response.data;
 };
 
+export const createLanguage = async (language: { name: string }): Promise<Language> => {
+    const response = await api.post('/languages', language);
+    return response.data;
+};

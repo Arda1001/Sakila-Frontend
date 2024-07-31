@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import useActors from '../hooks/useActors';
+import SearchBar from './SearchBar';
 
 const ActorList: React.FC = () => {
     const { actors, loading, error } = useActors();
@@ -18,13 +19,10 @@ const ActorList: React.FC = () => {
     return (
         <div>
             <h1>Actors</h1>
-            <input
-                type="text"
-                placeholder="Search actors..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
-            />
+            <SearchBar onSearch={setSearchTerm} />
+            <Link to="/actors/create">
+                <button className="create-actor-button">Create Actor</button>
+            </Link>
             <ul className="actor-list">
                 {filteredActors.map((actor) => (
                     <li key={actor.id}>
