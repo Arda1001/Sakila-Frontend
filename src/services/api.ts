@@ -3,8 +3,10 @@ import { Actor } from '../types/actor';
 import { Language } from '../types/language';
 import { Film } from '../types/film';
 
+const BASE_URL = (import.meta.env.VITE_API_URL ?? "") + "/api"
+
 const api = axios.create({
-    baseURL: 'http://localhost:8080', // URL of API
+    baseURL: BASE_URL, // URL of API
 });
 
 export const fetchActors = async (): Promise<Actor[]> => {
