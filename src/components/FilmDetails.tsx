@@ -30,9 +30,9 @@ const FilmDetails: React.FC = () => {
             <p>{film.description}</p>
             <p>Release Year: {film.releaseYear}</p>
             <p>Rental Duration: {film.rentalDuration} days</p>
-            <p>Rental Rate: ${film.rentalRate}</p>
+            <p>Rental Rate: £{film.rentalRate}</p>
             <p>Length: {film.length} minutes</p>
-            <p>Replacement Cost: ${film.replacementCost}</p>
+            <p>Replacement Cost: £{film.replacementCost}</p>
             <p>Rating: {formatRating(film.rating)}</p>
             <p>Special Features: {film.specialFeatures.map(formatSpecialFeature).join(', ')}</p>
             <p>Language: {film.language.id ? film.language.name : 'N/A'}</p>

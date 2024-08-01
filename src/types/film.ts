@@ -17,3 +17,18 @@ export interface Film {
     castIds: number[];
     cast: Actor[];
 }
+
+export interface CreateFilm {
+    title: string;
+    description: string;
+    releaseYear: number;
+    languageId: number;
+    originalLanguageId: number | null;
+    rentalDuration: number;
+    rentalRate: number;
+    length: number;
+    replacementCost: number;
+    rating: string;
+    specialFeatures: string[];
+    castIds: number[];
+}

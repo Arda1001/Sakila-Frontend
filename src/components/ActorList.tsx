@@ -21,7 +21,7 @@ const ActorList: React.FC = () => {
             <h1>Actors</h1>
             <SearchBar onSearch={setSearchTerm} />
             <Link to="/actors/create">
-                <button className="create-actor-button">Create Actor</button>
+                <button className="create-button">Create Actor</button>
             </Link>
             <ul className="actor-list">
                 {filteredActors.map((actor) => (

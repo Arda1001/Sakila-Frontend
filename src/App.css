@@ -191,71 +191,209 @@ h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.create-actor-button,
-.create-language-button {
-  background-color: #4CAF50;
+/* Create Button Styles */
+.create-button {
+  background-color: #28a745;
+  /* Green background */
   color: white;
-  padding: 10px 20px;
-  margin: 10px 0;
+  /* White text color */
+  padding: 0.5rem 1rem;
+  /* Padding for the button */
   border: none;
-  border-radius: 5px;
+  /* Remove border */
+  border-radius: 4px;
+  /* Rounded corners */
   cursor: pointer;
-  font-size: 1rem;
+  /* Pointer cursor on hover */
+  margin-bottom: 1rem;
+  /* Space below the button */
+  transition: background-color 0.3s ease;
+  /* Transition effect */
 }
 
-.create-actor-button:hover,
-.create-language-button:hover {
-  background-color: #45a049;
+/* Hover effect for the Create button */
+.create-button:hover {
+  background-color: #218838;
+  /* Darker green on hover */
 }
 
-.create-actor,
-.create-language {
+/* General form container */
+form {
   background-color: #fff;
   padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
 }
 
-.create-actor h1,
-.create-language h1 {
-  margin-bottom: 1rem;
+/* Form header */
+form h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
 }
 
-.create-actor form div,
-.create-language form div {
-  margin-bottom: 1rem;
-}
-
-.create-actor label,
-.create-language label {
+/* Form field label */
+form label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
 }
 
-.create-actor input,
-.create-language input {
+/* Form input and select fields */
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form select {
   width: 100%;
   padding: 0.5rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
 }
 
-.create-actor .create-language .btn-success {
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Textarea specific styling */
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form buttons */
+form button[type="submit"] {
   background-color: #28a745;
-  color: #fff;
-  padding: 0.5rem 1rem;
+  color: white;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
-.create-actor .create-language .btn-success:hover {
+form button[type="submit"]:hover {
   background-color: #218838;
 }
 
-.create-actor .create-language .error {
+/* Multi-select styling */
+form select[multiple] {
+  height: auto;
+  /* Adjust height for multi-select */
+  min-height: 120px;
+  /* Minimum height for better UX */
+}
+
+/* Error messages */
+form .error {
   color: red;
-  margin-top: 1rem;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Add/Remove button styling for dynamic fields */
+.btn-add,
+.btn-remove {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.btn-add:hover,
+.btn-remove:hover {
+  background-color: #0056b3;
+}
+
+.btn-remove {
+  background-color: red;
+  margin-left: 0.5rem;
+}
+
+.btn-remove:hover {
+  background-color: darkred;
+}
+
+/* Ensure a responsive design */
+@media (max-width: 600px) {
+  form {
+    padding: 1.5rem;
+    width: 90%;
+  }
+}
+
+.create-film {
+  max-width: 600px;
+  margin: 0 auto;
+  /* Center the form horizontally */
+  padding: 2rem;
+  /* Add padding around the form */
+  background-color: #fff;
+  /* Ensure the form has a white background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a slight shadow for depth */
+  border-radius: 8px;
+  /* Round the corners of the form */
+}
+
+/* Style each form element */
+.create-film form>div {
+  margin-bottom: 1rem;
+  /* Add space between form elements */
+}
+
+/* Style the labels */
+.create-film label {
+  display: block;
+  /* Ensure labels are on their own line */
+  margin-bottom: 0.5rem;
+  /* Add space between label and input */
+  font-weight: bold;
+  /* Make labels bold for emphasis */
+}
+
+/* Style the input fields */
+.create-film input[type="text"],
+.create-film input[type="number"],
+.create-film textarea,
+.create-film select {
+  width: 100%;
+  /* Make inputs full width */
+  padding: 0.5rem;
+  /* Add padding inside the inputs */
+  border: 1px solid #ddd;
+  /* Light border */
+  border-radius: 4px;
+  /* Rounded corners */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+}
+
+/* Style the textarea specifically */
+.create-film textarea {
+  resize: vertical;
+  /* Allow vertical resizing only */
+  min-height: 100px;
+  /* Set a minimum height */
 }

@@ -18,7 +18,8 @@ const CreateLanguage: React.FC = () => {
             await createLanguage({ name: upperName });
             alert('Language created successfully!');
             navigate('/languages');
-        } catch (err) {
+        }
+        catch (err) {
             setError('Failed to create language');
             console.error('Error creating language:', err);
         }
@@ -38,7 +39,7 @@ const CreateLanguage: React.FC = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-success">Create Language</button>
+                <button type="submit" className="create-button">Create Language</button>
             </form>
             {error && <p className="error">{error}</p>}
         </div>

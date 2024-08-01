@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Actor } from '../types/actor';
 import { Language } from '../types/language';
-import { Film } from '../types/film';
+import { Film, CreateFilm } from '../types/film';
 
 const BASE_URL = (import.meta.env.VITE_API_URL ?? "") + "/api"
 
@@ -34,8 +34,8 @@ export const fetchFilm = async (id: number): Promise<Film> => {
     return response.data;
 };
 
-export const createFilm = async (film: Film): Promise<Film> => {
-    const response = await api.post('/films', film);
+export const createFilm = async (createFilm: CreateFilm): Promise<Film> => {
+    const response = await api.post('/films', createFilm);
     return response.data;
 };
 

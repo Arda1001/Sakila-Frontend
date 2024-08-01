@@ -22,7 +22,7 @@ const FilmList: React.FC = () => {
             <h1>Films</h1>
             <SearchBar onSearch={setSearchTerm} />
             <Link to="/films/create">
-                <button className="create-film-button">Create Film</button>
+                <button className="create-button">Create Film</button>
             </Link>
             <ul className="film-list">
                 {filteredFilms.map((film: Film) => (

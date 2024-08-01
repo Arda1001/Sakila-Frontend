@@ -19,8 +19,8 @@ const LanguageList: React.FC = () => {
         <div>
             <h1>Languages</h1>
             <SearchBar onSearch={setSearchTerm} />
-            <Link to="/create-language">
-                <button className="create-language-button">Create Language</button>
+            <Link to="/languages/create">
+                <button className="create-button">Create Language</button>
             </Link>
             <ul className="language-list">
                 {filteredLanguages.map((language: Language) => (

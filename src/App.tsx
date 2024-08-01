@@ -25,8 +25,8 @@ const App: React.FC = () => {
           <Route path="/films" element={<FilmList />} />
           <Route path="/films/:id" element={<FilmDetails />} />
           <Route path="/actors/create" element={<CreateActor />} />
-          <Route path="/create-language" element={<CreateLanguage />} />
-          <Route path="/create-film" element={<CreateFilm />} />
+          <Route path="/languages/create" element={<CreateLanguage />} />
+          <Route path="/films/create" element={<CreateFilm />} />
           {/* Fallback route for unmatched paths */}
           <Route path="*" element={<ErrorPage />} />
         </Routes>
