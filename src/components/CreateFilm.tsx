@@ -92,6 +92,14 @@ const CreateFilm: React.FC = () => {
         }));
     };
 
+    const formatDescription = (description: string) => {
+        return description
+            .split(' ')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    }
+
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -99,7 +107,7 @@ const CreateFilm: React.FC = () => {
         const uppercasedFilmData = {
             ...filmData,
             title: filmData.title.toUpperCase(),
-            description: filmData.description.toUpperCase(),
+            description: formatDescription(filmData.description),
         };
 
         createFilm(uppercasedFilmData)
@@ -190,9 +198,9 @@ const CreateFilm: React.FC = () => {
                     <select id="rating" name="rating" required onChange={handleInputChange}>
                         <option value="G">G</option>
                         <option value="PG">PG</option>
-                        <option value="PG-13">PG-13</option>
+                        <option value="PG_13">PG-13</option>
                         <option value="R">R</option>
-                        <option value="NC-17">NC-17</option>
+                        <option value="NC_17">NC-17</option>
                     </select>
                 </div>
 
