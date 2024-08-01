@@ -108,6 +108,7 @@ const CreateFilm: React.FC = () => {
             ...filmData,
             title: filmData.title.toUpperCase(),
             description: formatDescription(filmData.description),
+            castIds: filmData.castIds,
         };
 
         createFilm(uppercasedFilmData)
