@@ -73,16 +73,17 @@ const CreateFilm: React.FC = () => {
     };
 
     const handleAddFeature = () => {
-        if (selectedFeature && !filmData.specialFeatures.includes(selectedFeature)) {
+        // Convert selected feature to uppercase format before checking
+        const formattedFeature = specialFeaturesMap[selectedFeature];
+        // Check for duplicates
+        if (selectedFeature && !filmData.specialFeatures.includes(formattedFeature)) {
             setFilmData((prevData) => ({
                 ...prevData,
-                specialFeatures: [
-                    ...prevData.specialFeatures,
-                    specialFeaturesMap[selectedFeature] // Convert to backend format
-                ]
+                specialFeatures: [...prevData.specialFeatures, formattedFeature],
             }));
-            setSelectedFeature(''); // Reset the dropdown after adding
         }
+        // Reset dropdown
+        setSelectedFeature('');
     };
 
     const handleRemoveFeature = (feature: string) => {
