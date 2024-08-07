@@ -19,6 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             onChange={handleInputChange}
             placeholder="Search..."
             className="search-bar"
+            id='searchBar'
         />
     );
 };
