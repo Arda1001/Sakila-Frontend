@@ -310,7 +310,7 @@ const CreateFilm: React.FC = () => {
                 </div>
 
 
-                <button type="submit" className="create-button">Create Film</button>
+                <button type="submit" className="create-button" id='createButton'>Create Film</button>
             </form>
         </div>
     );

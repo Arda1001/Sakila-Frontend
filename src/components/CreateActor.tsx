@@ -51,7 +51,7 @@ const CreateActor: React.FC = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="create-button">Create Actor</button>
+                <button type="submit" className="create-button" id='createButton'>Create Actor</button>
             </form>
             {error && <p className="error">{error}</p>}
         </div>
